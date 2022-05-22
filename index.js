@@ -7,10 +7,10 @@ import fs from 'fs'
 
 //Load Server
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 app.get('/', (req, res) => {
-  res.send('Бот работает!')
+  res.send('<h1 styele="color: green">Бот работает!</h1>')
 })
 
 app.listen(port, () => {
