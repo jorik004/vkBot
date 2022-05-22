@@ -159,7 +159,7 @@ vk.updates.on('message_new', async context => {
         
     }
     //Первое задание
-    else if(context.text.toLowerCase() === 'след.' && lvlCount == 1){
+    else if(context.text.toLowerCase() === 'след.' || context.text.toLowerCase() === 'начать' && lvlCount == 1){
         await context.send({
             message: `Задание: 
             Создать переменную с именем 'botName' и присвоить ей значение 'PlBots'
