@@ -96,7 +96,7 @@ vk.updates.on('message_new', async context => {
         }))
     }
     //Первый урок
-    else if(context.text.toLowerCase() === 'начать' && lvlCount < 0){
+    else if(context.text.toLowerCase() === 'начать'){
         lvlCount++
 
         await context.send({
