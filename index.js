@@ -80,7 +80,7 @@ vk.updates.on('message_new', async context => {
             level: 0,
         }))
     }
-    else if(context.text.toLowerCase() === 'начать'){
+    else if(context.text.toLowerCase() === 'начать' && lvlCount > 0 && lvlCount < 2){
         if (lvlCount < 1) {
             lvlCount++
         }
