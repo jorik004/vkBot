@@ -157,7 +157,7 @@ vk.updates.on('message_new', async context => {
             
             📇 - Строки кода.
             🔥 - Показатель уровня.
-            😎 - Имя и фамилия пользователяю`,
+            😎 - Имя и фамилия пользователя.`,
             keyboard: creator.inline(),
         })
 
