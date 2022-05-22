@@ -168,7 +168,7 @@ vk.updates.on('message_new', async context => {
         })
     }
     //Ответ первого задания
-    else if(context.text.toLowerCase() === "let botName = 'PlBots'"  || context.text.toLowerCase() === 'let botName = "PlBots"' && lvlCount == 1){
+    else if(context.text.toLowerCase() === "let botName = 'PlBots'" && lvlCount == 1 || context.text.toLowerCase() === 'let botName = "PlBots"' && lvlCount == 1){
         lvlCount++
         isSucc = true
         await context.send({
