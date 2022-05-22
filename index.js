@@ -177,7 +177,7 @@ vk.updates.on('message_new', async context => {
         })
     }
     //Второй урок
-    else if(context.text.toLowerCase() === 'след.' && lvlCount == 2){
+    else if(context.text.toLowerCase() === 'след.' && lvlCount == 2 || context.text.toLowerCase() === 'начать' && lvlCount == 2){
         await context.send({
             message: `Второй урок скоро появится`
         })
