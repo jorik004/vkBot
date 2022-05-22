@@ -8,6 +8,7 @@ const vk = new VK({
 })
 
 let lvlCount = 0
+let isSucc = false
 
 //BUTTON
 const builder = Keyboard.builder()
@@ -142,6 +143,24 @@ vk.updates.on('message_new', async context => {
             keyboard: nextButton,
         })
         
+    }
+
+    else if(context.text.toLowerCase() === 'след.' && lvlCount == 1){
+        await context.send({
+            message: `Задание: 
+            Создать переменную с именем 'botName' и присвоить ей значение 'PlBots'
+            
+            P.S: переменная с текстом заключается в кавычки(двойные "" или ординарные ''), а с числом без кавычек!`
+        })
+    }
+
+    else if(context.text.toLowerCase() === "let botName = 'PlBots'"  || 'let botName = "PlBots"' && lvlCount == 1){
+        lvlCount++
+        isSucc = true
+        await context.send({
+            message: `Задание выполнено
+            +1🔥`
+        })
     }
 
     else if(context.text.toLowerCase() === 'меню'){
