@@ -1,6 +1,21 @@
 import { VK, Keyboard} from 'vk-io'
+import express from 'express'
 import config from './config/config.js'
 import fs from 'fs'
+
+
+
+//Load Server
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Бот работает!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 
 //VARIABLES
 const vk = new VK({
