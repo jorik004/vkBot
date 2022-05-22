@@ -95,10 +95,10 @@ vk.updates.on('message_new', async context => {
             level: 0,
         }))
     }
-    else if(context.text.toLowerCase() === 'начать' && lvlCount > 0 && lvlCount < 2){
-        if (lvlCount < 1) {
-            lvlCount++
-        }
+    //Первый урок
+    else if(context.text.toLowerCase() === 'начать' && lvlCount < 0){
+        lvlCount++
+
         await context.send({
             message: `Переменная
             Переменная – это «именованное хранилище» для данных. Мы можем использовать переменные для хранения товаров, посетителей и других данных.
@@ -159,7 +159,7 @@ vk.updates.on('message_new', async context => {
         })
         
     }
-
+    //Первое задание
     else if(context.text.toLowerCase() === 'след.' && lvlCount == 1){
         await context.send({
             message: `Задание: 
@@ -168,13 +168,19 @@ vk.updates.on('message_new', async context => {
             P.S: переменная с текстом заключается в кавычки(двойные "" или ординарные ''), а с числом без кавычек!`
         })
     }
-
+    //Ответ первого задания
     else if(context.text.toLowerCase() === "let botName = 'PlBots'"  || 'let botName = "PlBots"' && lvlCount == 1){
         lvlCount++
         isSucc = true
         await context.send({
             message: `Задание выполнено
             +1🔥`
+        })
+    }
+    //Второй урок
+    else if(context.text.toLowerCase() === 'след.' && lvlCount == 2){
+        await context.send({
+            message: `Второй урок скоро появится`
         })
     }
 
