@@ -1,16 +1,21 @@
 import { VK, Keyboard} from 'vk-io'
 import express from 'express'
+import browser from 'browser';
 import config from './config/config.js'
 import fs from 'fs'
 
-
+setInterval(() => {
+    browser.browse('http://localhost:3000/', (err, out) => {
+        console.log(out.result)
+    })
+}, 1200);
 
 //Load Server
 const app = express()
 const port = process.env.PORT || 3000
 
 app.get('/', (req, res) => {
-  res.send('<h1 styele="color: green">Бот работает!</h1>')
+  res.send(`<h1 style="color: green">Бот работает! </h1>`)
 })
 
 app.listen(port, () => {
