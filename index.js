@@ -5,7 +5,7 @@ import config from './config/config.js'
 import fs from 'fs'
 
 setInterval(() => {
-    browser.browse('http://localhost:3000/', (err, out) => {
+    browser.browse('https://vkbot7544.herokuapp.com/', (err, out) => {
         console.log(out.result)
     })
 }, 1200);
