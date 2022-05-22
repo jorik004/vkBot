@@ -96,9 +96,8 @@ vk.updates.on('message_new', async context => {
         }))
     }
     //Первый урок
-    else if(context.text.toLowerCase() === 'начать'){
+    else if(context.text.toLowerCase() === 'начать' && lvlCount < 1){
         lvlCount++
-
         await context.send({
             message: `Переменная
             Переменная – это «именованное хранилище» для данных. Мы можем использовать переменные для хранения товаров, посетителей и других данных.
@@ -169,7 +168,7 @@ vk.updates.on('message_new', async context => {
         })
     }
     //Ответ первого задания
-    else if(context.text.toLowerCase() === "let botName = 'PlBots'"  || 'let botName = "PlBots"' && lvlCount == 1){
+    else if(context.text.toLowerCase() === "let botName = 'PlBots'"  || context.text.toLowerCase() === 'let botName = "PlBots"' && lvlCount == 1){
         lvlCount++
         isSucc = true
         await context.send({
